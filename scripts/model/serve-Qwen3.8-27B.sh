@@ -1,0 +1,17 @@
+vllm serve nvidia/Qwen3.8-27B-NVFP4 \
+  --host 0.0.0.0 \
+  --served-model-name nvidia/Qwen3.8-27B-NVFP4 \
+  --tensor-parallel-size 1 \
+  --max-model-len 262144 \
+  --max-num-seqs 2 \
+  --max-num-batched-tokens 2048 \
+  --gpu-memory-utilization 0.97 \
+  --kv-cache-dtype nvfp4 \
+  --attention-backend FLASHINFER \
+  --enable-chunked-prefill \
+  --enable-prefix-caching \
+  --async-scheduling \
+  --compilation-config '{"cudagraph_mode":"FULL_DECODE_ONLY","cudagraph_capture_sizes":[1]}' \
+  --enable-auto-tool-choice \
+  --tool-call-parser qwen3_coder \
+  --reasoning-parser qwen3
