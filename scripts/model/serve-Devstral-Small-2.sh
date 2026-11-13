@@ -1,0 +1,16 @@
+vllm serve cyankiwi/Devstral-Small-2-24B-Instruct-2512-AWQ-4bit \
+  --host 0.0.0.0 \
+  --served-model-name cyankiwi/Devstral-Small-2-24B-Instruct-2512-AWQ-4bit \
+  --tensor-parallel-size 1 \
+  --max-model-len 262144 \
+  --max-num-seqs 2 \
+  --max-num-batched-tokens 2048 \
+  --gpu-memory-utilization 0.97 \
+  --kv-cache-dtype nvfp4 \
+  --attention-backend FLASHINFER \
+  --enable-chunked-prefill \
+  --enable-prefix-caching \
+  --async-scheduling \
+  --compilation-config '{"cudagraph_mode":"FULL_DECODE_ONLY","cudagraph_capture_sizes":[1]}' \
+  --enable-auto-tool-choice \
+  --tool-call-parser mistral

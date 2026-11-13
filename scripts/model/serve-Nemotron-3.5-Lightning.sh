@@ -1,0 +1,19 @@
+vllm serve nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4 \
+  --host 0.0.0.0 \
+  --served-model-name nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4 \
+  --tensor-parallel-size 1 \
+  --max-model-len 1048576 \
+  --max-num-seqs 2 \
+  --max-num-batched-tokens 2048 \
+  --gpu-memory-utilization 0.97 \
+  --kv-cache-dtype fp8 \
+  --moe-backend marlin \
+  --mamba-backend flashinfer \
+  --mamba-cache-mode align \
+  --enable-chunked-prefill \
+  --enable-prefix-caching \
+  --async-scheduling \
+  --compilation-config '{"cudagraph_mode":"FULL_DECODE_ONLY","cudagraph_capture_sizes":[1]}' \
+  --enable-auto-tool-choice \
+  --tool-call-parser qwen3_coder \
+  --reasoning-parser nemotron_v3
