@@ -7,7 +7,7 @@ vllm serve RedHatAI/diffusiongemma-26B-A4B-it-NVFP4 \
   --trust-remote-code \
   --tensor-parallel-size 1 \
   --max-model-len 262144 \
-  --max-num-seqs 4 \
+  --max-num-seqs 2 \
   --max-num-batched-tokens 4096 \
   --gpu-memory-utilization 0.95 \
   --attention-backend TRITON_ATTN \
