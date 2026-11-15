@@ -1,7 +1,6 @@
-
-vllm serve google/gemma-4-E4B-it \
+vllm serve google/gemma-4-E2B-it \
   --host 0.0.0.0 \
-  --served-model-name google/gemma-4-E4B-it \
+  --served-model-name google/gemma-4-E2B-it \
   --tensor-parallel-size 1 \
   --max-model-len 131072 \
   --max-num-seqs 64 \
@@ -13,5 +12,5 @@ vllm serve google/gemma-4-E4B-it \
   --compilation-config '{"cudagraph_mode":"FULL_DECODE_ONLY","cudagraph_capture_sizes":[1]}' \
   --enable-auto-tool-choice \
   --tool-call-parser gemma4 \
-  --reasoning-parser gemma4 
+  --reasoning-parser gemma4 \
   --performance-mode throughput
