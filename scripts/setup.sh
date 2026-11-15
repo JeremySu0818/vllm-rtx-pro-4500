@@ -9,5 +9,6 @@ source .venv/bin/activate
 
 echo "[3/3] Installing vLLM."
 uv pip install vllm --torch-backend=auto
+uv pip install "vllm[audio]"
 
 echo "Done!"
