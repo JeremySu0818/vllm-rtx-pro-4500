@@ -3,7 +3,7 @@ vllm serve google/gemma-4-E2B-it \
   --served-model-name google/gemma-4-E2B-it \
   --tensor-parallel-size 1 \
   --max-model-len 131072 \
-  --max-num-seqs 64 \
+  --max-num-seqs 128 \
   --max-num-batched-tokens 2048 \
   --gpu-memory-utilization 0.97 \
   --enable-chunked-prefill \
